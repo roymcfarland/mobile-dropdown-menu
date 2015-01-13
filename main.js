@@ -1,3 +1,5 @@
+
+
 // Create a <select> and append to #menu
 var $select = $('<select></select>');
 $('#menu').append($select);
@@ -7,6 +9,11 @@ $('#menu a').each(function(){
 	
 	// Create an option
 	var $option = $('<option></option>');
+
+	// Deal with selected options depending on current page
+	if($anchor.parent().hasClass('selected')) {
+		$option.prop('selected', true);
+	}
 
 	// Option's value is the href
 	$option.val($anchor.attr('href'));
@@ -20,8 +27,11 @@ $('#menu a').each(function(){
 });
 
 // Create a button 
+var $button = $('<button>Go</button>');
+$('#menu').append($button);
+
 // Bind click to button 
+$button.on('click', function(){
 	// Go to <select>'s location
-// Modify CSS to hide links on small resolution and show butto and <select>
-	// Also hides <select> and button on larger resolutions and shows links
-// Deal with selected options depending on current page
+	window.location = $select.val();
+});
