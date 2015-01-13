@@ -26,12 +26,16 @@ $('#menu a').each(function(){
 
 });
 
-// Create a button 
-var $button = $('<button>Go</button>');
-$('#menu').append($button);
-
-// Bind click to button 
-$button.on('click', function(){
-	// Go to <select>'s location
+$select.change(function(){
 	window.location = $select.val();
 });
+
+// Create a button 
+// var $button = $('<button>Go</button>');
+// $('#menu').append($button);
+
+// // Bind click to button 
+// $button.on('click', function(){
+// 	// Go to <select>'s location
+// 	window.location = $select.val();
+// });
